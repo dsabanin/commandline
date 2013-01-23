@@ -11,7 +11,7 @@ module Unit
       out = nil
       err = nil
       Timeout::timeout(5) {
-        status = Open4.popen4(cmd) { |cid, stdin, stdout, stderr|
+        status = MyOpen4.popen4(cmd) { |cid, stdin, stdout, stderr|
           out = stdout.read
           err = stderr.read
           stdin.close_write
